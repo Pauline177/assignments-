@@ -31,14 +31,26 @@ var peopleWhoWantToSeeMadMaxFuryRoad = [
       //save gender pronoun in a variable
       //
     if ( num >=18){
-    console.log(peopleWhoWantToSeeMadMaxFuryRoad[i].name + " is old enough")
-}  else   {
-    console.log(peopleWhoWantToSeeMadMaxFuryRoad[i].name + " is not old enough")
+    //console.log(peopleWhoWantToSeeMadMaxFuryRoad[i].name + " is old enough")
+    var sex = peopleWhoWantToSeeMadMaxFuryRoad[i].gender
+      if ( sex === " female") {
+          console.log( peopleWhoWantToSeeMadMaxFuryRoad[i].name + " she" + " is old enough")
+      } else {
+          console.log( peopleWhoWantToSeeMadMaxFuryRoad[i].name + " he" + " is old enough")
+      }
+    }  else   {
+    //console.log(peopleWhoWantToSeeMadMaxFuryRoad[i].name + " is not old enough")
+    var sex = peopleWhoWantToSeeMadMaxFuryRoad[i].gender
+      if ( sex === " female") {
+          console.log( peopleWhoWantToSeeMadMaxFuryRoad[i].name + " she" + " is old enough")
+      } else {
+          console.log( peopleWhoWantToSeeMadMaxFuryRoad[i].name + " he" + " is old enough")
+      }
     
-} 
+    } 
 }
     
-//   } var sex = peopleWhoWantToSeeMadMaxFuryRoad[i].gender
+//   var sex = peopleWhoWantToSeeMadMaxFuryRoad[i].gender
 //   if ( sex === " female") {
 //       console.log( peopleWhoWantToSeeMadMaxFuryRoad[i].name + " she" + " is old enough")
 //   } else {
