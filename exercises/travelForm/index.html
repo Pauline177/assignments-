@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form name ="myForm">
+        <div1>
+            <p>Fill out the sections below.</p>
+            <input type="text" required placeHolder="first name"  name="name1">
+            <input type="text" required placeHolder="last name" name="name2">
+            <input type="number" required placeHolder="age" name="age">
+        </div1>
+
+        <div2>
+            <p>Check which represents your gender.</p>
+            <input type="radio" name="gender" value="male"> male </input>
+            <input type="radio" name="gender" value="female"> female</input>
+            <input type="radio" name="gender" value="I'd rather not say"> I'd rather not say</input>
+        </div2>
+        
+        <div3>
+            <p>Select your destination from the drop down below.</p>
+            <select required id = "destination">
+                 <option value="">Choose your destination</option>
+                 <option value="california">California</option>
+                 <option value="paris">Paris</option>
+                 <option value="hawaii">hawaii</option>
+                 <option value="ghana">Ghana</option>
+            </select>
+        </div3>
+        
+        <div4 id ="checkBox">
+            <p>Check all that applies to your dietary restriction, check N/A if none.</p>
+            <input type="checkbox" name="dietary" value="vegetarian"> vegetarian</input>
+            <input type="checkbox" name="dietary" value="kosher">  kosher </input>
+            <input type="checkbox" name="dietary" value="lactose"> lactose free </input>
+            <input type="checkbox" name="dietary" value="gluten">   gluten free</input>
+            <input type="checkbox" name="dietary" value="none">   none(N/A)</input>
+        </div4>
+        
+        <button> Submit</button>
+    </form>
+    <script src="app.js"></script>
+</body>
+</html>
