@@ -13,15 +13,17 @@
 }
 
 p {
-     padding-top: 0px;
+     padding-bottom: 70px;
+     display: block;
      
      
 }
 
-h1,h2,h3 { 
+h1 { 
     padding: 20px;
     background-color: aqua;
     text-align: center;
+    display: block;
     
 }
 
@@ -30,4 +32,9 @@ img {
     width: 300px;
     float: left;
     margin-right: 20px;
+}
+
+h4 {
+    font-family: 'Times New Roman', Times, serif;
+   font-size: 14px;
 }

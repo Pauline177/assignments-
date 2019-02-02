@@ -5,8 +5,10 @@ window.onscroll = function(){
 var navbar = document.getElementById("navbar");
 var sticky = navbar.offsetTop;
 
-function myFunction() {
-    if (window.pageYOffset >= sticky) {
+function myFunction(event) {
+    event.preventDefault()
+
+ if (window.pageYOffset >= sticky) {
         navbar.classList.add("navbar")
     } else {
         navbar.classList.remove("navbar");
@@ -14,6 +16,8 @@ function myFunction() {
 }
 
 
+
+// group teaching with jessica about conditionals
 // var person = {
 //     name: "john",
 //     age : "30"
