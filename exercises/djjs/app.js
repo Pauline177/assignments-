@@ -1,6 +1,5 @@
-// var myBtn= document.getElementById('myBtn')
-// //myBtn.style.color ="red";
-
-// myBtn.addEventListener("mouseover", function(event){
-//     event.myBtn.style.color = "red";
-// })
+//1. in css using the (:hover) syntax 
+var square = document.getElementById('square')
+square.addEventListener("mousedown", function(){
+    square.style.backgroundColor = 'red';
+})
