@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box; 
+    
+}
+header{
+    display: block;
+    background-color: rgb(182, 131, 38);
+    height: 90px;
+    width:100%;
+}
+.log{
+    background-color: purple;
+
+}
+.ver, .hor{
+    display: flex;
+}
+.vertical{
+  width: 10pt;
+  height: 100%; 
+  background-color: white;
+  margin: 4pt;
+  flex: row;
+}
+img{
+    /* width: 200pt;
+    height: 200pt; */
+}

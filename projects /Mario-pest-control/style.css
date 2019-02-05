@@ -26,3 +26,12 @@ button{
     font-size: 20px;
     background-color: gold;
 }
+
+
+@media (min-width: 800px){
+   
+     #title, img, .footer{
+        background-color: lightslategray;
+    }
+    
+}

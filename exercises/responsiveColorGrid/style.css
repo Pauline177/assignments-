@@ -41,12 +41,11 @@ body {
     height: 20vh;
     margin: 4pt;
 }
-@media (max-width: 768px){
+@media (min-width: 768px){
+    .first, .second, .third{
+        flex-wrap: wrap;}
+
     .redish, .lightBlue, .green, .orange {
         width: 100%;
-        background-color: purple;
-    }
-
+    background-color: purple}
 }
-
-
