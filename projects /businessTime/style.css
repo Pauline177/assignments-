@@ -2,27 +2,39 @@
     box-sizing: border-box; 
     
 }
-header{
-    display: block;
-    background-color: rgb(182, 131, 38);
-    height: 90px;
-    width:100%;
+body{
+    background-color:black;
 }
-.log{
-    background-color: purple;
-
+.navbar{
+    background-color: white;
+    overflow: hidden;
+    text-align: center;  
+   padding: 20px;
+    font-size: 17px;
+}
+.navbar a{
+text-align: center;
+font-size: 15px;
+text-decoration: none;
+padding: 16px;
+}
+.navbar a:hover{
+    background-color: gray
 }
 .ver, .hor{
     display: flex;
 }
-.vertical{
-  width: 10pt;
-  height: 100%; 
+.vertical {
+  width: 0%;
+  height: 0vh; 
   background-color: white;
-  margin: 4pt;
+  margin: 0pt;
   flex: row;
+  margin: 90px;
+
+  
 }
 img{
-    /* width: 200pt;
-    height: 200pt; */
+    width: 80pt;
+    height: 80pt;
 }

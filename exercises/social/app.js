@@ -1,28 +1,37 @@
 var worker = {
     name: "jane",
     hours: 40,
-    coworkers : [
-        {
+    coworkers: {
+        
             name: "Amy",
             hours: 30,
-            friends: [
-                {
-                    name: Sarah, 
+            friends= [
+                {   
+                    name: "Sarah", 
                     age: 20,
                 
                 }
-            ]
-        },
-        {
-            name: "Paul",
+            
+        ,
+          {name: "Paul",
             hours: 20,
-            friends: [
+            friends:
                 {
-                    name: Audrey,
+                    name: "Audrey",
                     age: 40,
                 }
-            ]
-        }
+            
+        }]
 
-    ]
+    
+
+// var worker2 = { name: "pauline", hours: 40}
+
+var her = worker.coworkers.friends
+for (var i=0; i < her.length; i++)
+var me = {
+    name : "pauline",
+    age: 90,
 }
+her.push("me")
+console.log(her)

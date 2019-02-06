@@ -18,30 +18,37 @@
 //     console.log(i)
 // }
 
-// var peopleArray = [
-//     {
-//       name: "Harrison Ford",
-//       occupation: "Actor"
-//     },
-//     {
-//       name: "Justin Bieber",
-//       occupation: "Singer"
-//     },
-//     {
-//       name: "Vladimir Putin",
-//       occupation: "Politician"
-//     },
-//     {
-//       name: "Oprah",
-//       occupation: "Entertainer"
-//     }
-//   ]
-//  for (var i = 0; i < peopleArray.length; i++) {
+var peopleArray = [
+    {
+      name: "Harrison Ford",
+      occupation: "Actor"
+    },
+    {
+      name: "Justin Bieber",
+      occupation: "Singer"
+    },
+    {
+      name: "Vladimir Putin",
+      occupation: "Politician"
+    },
+    {
+      name: "Oprah",
+      occupation: "Entertainer"
+    }
+  ]
+ for (var i = 0; i < peopleArray.length; i++) {
 
-//     console.log(peopleArray[i].name, peopleArray[i].occupation)
-// }
-
-var arr= ["banana", "orange", "pineapple", "kiwi"]
-for( var i = 0; i < arr.length; i++) {
-console.log(arr[i])
+    console.log(peopleArray[i].name, peopleArray[i].occupation)
 }
+var me ={
+    name: "Pauline",
+    occupation : "student"
+}
+peopleArray.push(me)
+console.log(peopleArray)
+
+
+// var arr= ["banana", "orange", "pineapple", "kiwi"]
+// for( var i = 0; i < arr.length; i++) {
+// console.log(arr[i])
+// }

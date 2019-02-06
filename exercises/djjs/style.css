@@ -3,12 +3,13 @@
     width: 10%;
     height: 25%;
     padding: 90px;
-   
-}
-
+   }
 #square:hover { 
     background-color:blue;
 }
 #square:active{
     background-color: red;
+}
+#square:not(:hover) {
+    background-color: yellow;
 }
