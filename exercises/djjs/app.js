@@ -26,3 +26,10 @@ window.addEventListener("keydown", function bl(e){
     }
 });
 
+square.addEventListener("dblclick", function (){
+    square.style.backgroundColor = "green"
+})
+
+square.addEventListener("wheel", function (){
+    square.style.backgroundColor = "orange"
+})

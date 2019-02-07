@@ -3,38 +3,67 @@
     
 }
 body{
-    background-color:black;
+    background-image: "http://wallpapercave.com/wp/Pf0yNS9.jpg";
+    border: 10px slategrey solid;
 }
 .navbar{
     background-color: white;
     overflow: hidden;
     text-align: center;  
-   padding: 20px;
-    font-size: 17px;
+    padding:0px;
+    font-size: 50px;
+    top: 0px;
+    margin: 0px;
 }
 .navbar a{
 text-align: center;
 font-size: 15px;
 text-decoration: none;
-padding: 16px;
+margin : 20px;
 }
 .navbar a:hover{
-    background-color: gray
+    background-color: gray;
+    padding: 20px;
 }
-.ver, .hor{
-    display: flex;
-}
-.vertical {
-  width: 0%;
-  height: 0vh; 
-  background-color: white;
-  margin: 0pt;
-  flex: row;
-  margin: 90px;
-
-  
-}
+#lady{
+    width: 300pt;
+    height: 300pt;
+    padding: 20px;  
+} 
 img{
-    width: 80pt;
-    height: 80pt;
+    width: 200px;
+    height: 200px;
+}
+h3{
+    color: white;
+    width: 40%;
+    height: 30px;
+    background-color:black;
+    margin: 10px;
+}
+div{
+    display: flex; 
+} 
+.lineOne, .lineTwo, .lineThree {
+    width: 33%;
+    height: 200px;
+    margin: 6pt;
+    padding: 0pt;
+}
+.lineOne{
+    background-color: rgb(155, 155, 6);
+    color: aliceblue;
+}
+.lineTwo{
+    background-color: black;
+    color: aliceblue;
+}
+.lineThree{
+    background-color: rgb(126, 11, 11);
+    color: aliceblue;
+}
+
+
+@media (min:800px){
+    .navbar
 }
