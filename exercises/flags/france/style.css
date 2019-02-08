@@ -1,0 +1,22 @@
+*{
+    box-sizing: border-box;
+}
+#container{
+    display: flex;
+    border: 6px solid aqua;
+    justify-content: space-evenly;
+    
+}
+#blue, #white, #red{
+    width: 33%;
+    height:400px;
+}
+#blue{
+    background-color: blue;
+}
+#white{
+    background-color: white;
+}
+#red{
+    background-color: red;
+}
