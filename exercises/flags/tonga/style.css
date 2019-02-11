@@ -1,0 +1,32 @@
+*{
+    box-sizing: border-box;
+}
+.container{
+    background-color: rgb(175, 6, 6);
+    display: flex;
+    width: 600px;
+    height: 300px;
+    border: 6pt aqua solid;
+}
+.white {
+background-color:white;
+display: flex;
+width: 48%;
+height: 50%;
+}
+.ver, .hor{
+    position: relative;
+    background-color: rgb(175, 6, 6);
+}
+.ver{
+    width: 15%;
+    height: 70%;
+    left:40%;
+    top: 15%;
+}
+.hor{
+    width: 45%;
+    height: 20%;
+    top: 40%;
+    left:10%;
+}

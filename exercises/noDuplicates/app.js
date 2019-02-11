@@ -19,7 +19,6 @@ var word = "bookkeeper larry"
 //2. method splits the string into an array for every character and removes any duplicates. 
 
 var unique = [ ...new Set(word)];
-// console.log(unique);
+ //console.log(unique);
 
-var newUnique = unique.join('')
-console.log(newUnique)
+console.log(unique.join(''))

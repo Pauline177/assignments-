@@ -1,0 +1,34 @@
+*{
+    box-sizing: border-box;
+}
+.container{
+    width: 500px;
+    height: 500px;
+    border: 6pt solid aqua;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+.orange, .white, .green{
+    width: 100%;
+    height:33%;
+}
+.orange{
+    background-color: rgb(207, 99, 10);
+}
+.white{
+    background-color: white;
+}
+.green{
+    background-color: rgb(14, 185, 14);
+}
+.circle{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: rgb(207, 99, 10);
+    position: relative;
+    left: 34%;
+    top: 3%;
+
+}

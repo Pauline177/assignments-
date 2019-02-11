@@ -1,0 +1,27 @@
+*{
+    box-sizing: border-box;
+}
+.container{
+    border: 6pt solid aqua;
+    background-color: red;
+    width: 50%;
+    height: 400px;
+    display: flex;
+}
+.ver, .hor{
+    background-color: white;
+}
+.ver{
+    width: 22%;
+    height: 60%;
+    position: relative;
+    left: 40%;
+    top: 20%;
+   
+}
+.hor{
+    width: 60%;
+    height: 22%;
+    position: relative;
+    top: 40%
+}
