@@ -1,0 +1,54 @@
+{"title": "json menu",
+ "menu": {
+    "appetizers": [
+        {
+            "name": "breadsticks",
+            "ingredients": ["bread","sticks"],
+            "description": "yummy bread sticks"
+        },
+        {
+            "name": "salad",
+            "ingredients": ["lettuce","more lettuce"],
+            "description": "there is a lot of lettuce"
+        }
+    ],
+    "cold sandwiches": [
+        {
+            "name": "very cold sandwich",
+            "ingredients": ["bread","lettuce","tomatoes"],
+            "descriptiom": " the coldest sandwich we have"
+        }
+    ],
+    "hot sandwiches": [
+        {
+            "name": " very hot sandwich",
+            " ingredients": ["bread","lettuce","tomatoes"],
+            "description": "the hotest sandwich we have"
+        }
+    ],
+    "desserts": [
+        {
+            "name": "ice cream",
+            "ingredients": [ "ice","cream"],
+            "description": " it's cold and sweet"
+        },
+        {
+            "name": "chocalate cake",
+            "ingredients": ["chocolate","cake"],
+            "description": "a very fine cake"
+        }
+    ],
+    "drinks": [
+        {
+            "name": "pepsi products",
+            "types": ["diet pepsi", "whatever pepsi","mountaindue"],
+            "descrption": "all pepsi products we can get"
+        },
+        {
+            "name": "coke products",
+            "types": [" diet coke","orange fanta", " whatever coke"],
+            "descrption": "all coke products we can get"
+        }
+    ]
+ }
+}
