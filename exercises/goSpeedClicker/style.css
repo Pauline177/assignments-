@@ -1,0 +1,12 @@
+#boxClick{
+    width: 50px;
+    height: 50px;
+    background-color: blueviolet;
+}
+#showClicks{
+    width: 90px;
+    height: 90px;
+    position: relative;
+    top: 80px;
+    background-color: lightgoldenrodyellow;
+}

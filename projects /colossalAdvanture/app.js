@@ -133,10 +133,10 @@
 // built in the if statements that will be able to end the game, winning or loosing. 
     function walkAgain() {
         if(player.health < 60){
-            return "Game Over"
+            return "Game Over, you can restart the game"
             
         } else if( player.health > 160){
-            return "woohh!! you win the game"
+            return "woohh!! you win the game. Play again!!"
         }
         else {
         var options2 = ["enter 'w' if you would like to walk, or 'print' if you would like to know you status during the game"]
