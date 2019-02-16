@@ -1,85 +1,132 @@
 var container = document.getElementById('container')
 var form = document.getElementById('enter')
 
-    ///get the information in postman////
-function getData(){axios.get("https://api.vschool.io/pauline/todo").then(function(response){
-    var tasks = response.data
-    listTodos(tasks)
+///get the information in postman////
+function getData() {
+    axios.get("https://api.vschool.io/pauline/todo").then(function (response) {
+        var tasks = response.data
+        listTodos(tasks)
 
-    }).catch(function(error){
-    console.log(error)
-})
+    }).catch(function (error) {
+        console.log(error)
+    })
 }
-    //// function that makes it appear to the page (DOM)////
-function listTodos(tasks){
-    for (var i = 0; i < tasks.length; i++){
-                    //make it show on the DOM//
-                //create an element///
+//// function that makes it appear to the page (DOM)////
+function listTodos(tasks) {
+
+    for (var i = 0; i < tasks.length; i++) {
+
+        ///////////make it show on the DOM////////
+        //create an element///
         var smallContainer = document.createElement('div')
-        var title = document.createElement('h1')
+        var title = document.createElement('h2')
         var imageUrl = document.createElement('img')
-        var describe = document.createElement('h1')
-        var price = document.createElement('h1')
-        var status = document.createElement('h1')
-            
-                /// give your element content///
+        var describe = document.createElement('h3')
+        var price = document.createElement('h3')
+        var status = document.createElement('h3')
+
+
+
+        /// give your element content///
         title.textContent = tasks[i].title
         imageUrl.setAttribute("src", tasks[i].imgUrl)
         describe.textContent = tasks[i].description
         price.textContent = tasks[i].price
         status.textContent = tasks[i].completed
-        
+        imageUrl.classList.add('pictureBox')
+        smallContainer.classList.add('smallContainer')
+        smallContainer.id = tasks[i]._id
 
-        //line through if completed//
-        if(tasks[i].completed){
+        ///// adding the check box////
+        var done = document.createElement("input")
+        done.type = "checkBox"
+        smallContainer.appendChild(done)
+
+        if (tasks[i].completed === true) {
             title.style.textDecoration = "line-through"
+            done.checked = true
+        } else {
+            title.style.textDecoration = "none"
+            done.checked = false
         }
+        //line through if completed//
+        done.addEventListener("click", function () {
+            if (done.checked == true) {
+                title.style.textDecoration = "line-through"
+                axios.put(`https://api.vschool.io/pauline/todo/${this.parentElement.id}`, { completed: true }).then(res => {
+                    console.log(res.data)
+                }).catch(err => {
+                    console.log(err)
+                })
+            } else if (done.checked == false) {
+                title.style.textDecoration = "none"
+                axios.put(`https://api.vschool.io/pauline/todo/${this.parentElement.id}`, { completed: false }).then(res => {
+                    console.log(res.data)
+                }).catch(err => {
+                    console.log(err)
+                })
+
+            }
+        })
+
+        //title.style.textDecoration = "line-through"
+
         ////append it to the div elements to smallContainer and smallContainer into the container////
         smallContainer.appendChild(title)
         smallContainer.appendChild(imageUrl)
         smallContainer.appendChild(describe)
         smallContainer.appendChild(price)
         smallContainer.appendChild(status)
+
+        //creating the delete button///////
+        var button = document.createElement('button')
+        button.textContent = "Delete"
+        smallContainer.appendChild(button)
+
+        /////// delete request when delete button is clicked//////////
+        button.addEventListener("click", function (event) {
+            axios.delete(`https://api.vschool.io/pauline/todo/${this.parentElement.id}`).then(function (response) {
+                console.log(response.data)
+            }).catch(function (error) {
+                console.log(error)
+            })
+        })
+
         container.appendChild(smallContainer)
     }
 }
 
 /// event listener to do our post request to the API ////
+
 form.addEventListener("submit", addToDo)
-function addToDo(event){
+
+function addToDo(event) {
     event.preventDefault()
-     
+
     var newInfo = {
-        title:       form.title.value,
-        imgUrl:   form.imgurl.value,
+        title: form.title.value,
+        imgUrl: form.imgurl.value,
         description: form.description.value,
-        price:       form.price.value,
-        completed:   form.completed.checked
+        price: form.price.value,
+        completed: form.completed.checked
     }
 
-        ///// reseting the form  to be empty///
-        form.title.value =""
-        form.imgurl.value =""
-        form.description.value =""
-        form.price.value =""
-        form.completed.checked =""
+    ///// reseting the form  to be empty///
+    form.title.value = ""
+    form.imgurl.value = ""
+    form.description.value = ""
+    form.price.value = ""
+    form.completed.checked = false
 
-    axios.post("https://api.vschool.io/pauline/todo", newInfo).then(function(response){
+    axios.post("https://api.vschool.io/pauline/todo", newInfo).then(function (response) {
         getData()
         container.innerHTML = ""
         console.log(response)
-    }).catch(function(error){
+    }).catch(function (error) {
         console.log(error)
     })
 }
 getData()
-
-
-    ///// delete request ////////
-function doDelete(){axios.delete("https://api.vschool.io/pauline/todo", ).then(function(response){
-
-})
-}
 
 //////////// NOTES//////////////
 //1. a contaiber that will show the todo lists. 

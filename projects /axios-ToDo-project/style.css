@@ -1,11 +1,22 @@
-/* style "eachTask" 
-    
+.pictureBox{
+    width: 200px;
+    height: 200px;
+}
+.smallContainer{
+    display: flex;
+    justify-content: space-around;
+    display: block;
+    margin: 3px;
+    border: 3px solid lightblue;
+}
+/* form{
+    display: flex;
+} */
 
-
-
-
-
-
-
+/* #container{
+    display: flex;
+    flex-direction: column-reverse;
+} */
+/* style "eachTask"
 
 */
