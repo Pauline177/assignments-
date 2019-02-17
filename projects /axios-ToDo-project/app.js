@@ -3,12 +3,12 @@ var form = document.getElementById('enter')
 
 ///get the information in postman////
 function getData() {
-    axios.get("https://api.vschool.io/pauline/todo").then(function (response) {
-        var tasks = response.data
+    axios.get("https://api.vschool.io/pauline/todo").then(res => {
+        var tasks = res.data
         listTodos(tasks)
 
-    }).catch(function (error) {
-        console.log(error)
+    }).catch(err => {
+        console.log(err)
     })
 }
 //// function that makes it appear to the page (DOM)////
@@ -18,10 +18,10 @@ function listTodos(tasks) {
 
         ///////////make it show on the DOM////////
         //create an element///
-        var smallContainer = document.createElement('div')
+        var smallContainer = document.createElement('div')   ///container for each todo////
         var title = document.createElement('h2')
         var imageUrl = document.createElement('img')
-        var describe = document.createElement('h3')
+        var describe = document.createElement('h4')
         var price = document.createElement('h3')
         var status = document.createElement('h3')
 
@@ -85,12 +85,12 @@ function listTodos(tasks) {
 
         /////// delete request when delete button is clicked//////////
         button.addEventListener("click", function (event) {
-            axios.delete(`https://api.vschool.io/pauline/todo/${this.parentElement.id}`).then(function (response) {
-                console.log(response.data)
-            }).catch(function (error) {
-                console.log(error)
+            axios.delete(`https://api.vschool.io/pauline/todo/${this.parentElement.id}`).then(res => {
+                event.target.parentElement.remove()
+            }).catch( err => {
+                console.log(err)
             })
-        })
+        })  
 
         container.appendChild(smallContainer)
     }
@@ -120,13 +120,14 @@ function addToDo(event) {
 
     axios.post("https://api.vschool.io/pauline/todo", newInfo).then(function (response) {
         getData()
-        container.innerHTML = ""
+        //container.innerHTML = ""
         console.log(response)
     }).catch(function (error) {
         console.log(error)
     })
 }
 getData()
+
 
 //////////// NOTES//////////////
 //1. a contaiber that will show the todo lists. 
