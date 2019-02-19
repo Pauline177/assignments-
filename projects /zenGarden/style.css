@@ -18,10 +18,11 @@
         /* the whole page */
 .main{
     display: grid;
-    grid-template-rows: 250px auto auto auto;  
+    grid-template-rows: 250px auto auto auto;
+    background-image: url(http://www.csszengarden.com/214/contours-opaque.png)
 }
 
-        /*1. header with the circle and the title of the page */
+/*/////////////////// 1. header with the circle and the title of the page ///////////////*/
 .header{
     background-image: url(http://www.csszengarden.com/214/huntington.jpg);
     opacity: inherit;
@@ -61,38 +62,43 @@
     text-align: center;
     font-family: second;
 }
+
 .lightGreenBackground{
     width:100%;
     height: auto;
     background-color: rgba(15, 102, 73, 0.185);
+    background-image: url(http://www.csszengarden.com/214/bamboo.png);
+    background-attachment: fixed;
 }
 
-
-        /*2. body with the text content */
+/*////////////////////2. body with the text content //////////////////////*/
 .body{
  background-color:white;
  line-height: 21pt;
  font-family: third;
  font-size: 14px;
- margin: 30px;
  color: rgba(5, 66, 46, 0.781);
 }
 .body h3{
     font-family: first;
     font-size: 19px;
-
+    margin-top: 40px;
+}
+.body h3, .body p{
+    margin-left: 50px;
 }
 
-        /*3. footer with words and logo */
+/*////////////////  3. footer with words and logo ///////////////////*/
 .footer{
     display: grid;
-    grid-template-rows: 170px 100px; 
+    grid-template-rows: 220px 115px; 
     color: rgba(255, 255, 255, 0.582);
 }
 .words{
     background-image: url(http://www.csszengarden.com/214/koi.jpg);
     font-family: second;
     text-align: center;
+    font-size: 22px;
 }
 b{
     font-family: third;
@@ -110,21 +116,93 @@ b{
 h1{
     padding: 9px;
 }
-        /*4. the right that moves when the page expands */
+/*/////////////////4. the right that moves when the page expands /////////////////*/
 .right{
     display:grid;
-    grid-template-rows: auto auto;
+    /* display: flex; */
+    grid-template-rows: 2fr 1fr;
+    background-color: rgba(116, 160, 116, 0.267);
+     
 }
-.topBoxes{
+ .topBoxes{
     display: grid;
-    grid-template-columns: 1fr 1fr ;
-    grid-template-rows: repeat(5, fr);
-    background-color: #325050;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    
+} 
+.topBox{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.267);
+    padding:10px;
+}
+.topBox p{
+    font-family: first;
+}
+.bottomBoxes{
+    background-color: rgba(24, 146, 24, 0.192);
+    display: grid;
+    /* display: flex;
+    flex-direction: column; */
+    grid-template-columns: 1fr 1fr;
+    font-family: first;
+    background-image: url(http://www.csszengarden.com/214/bamboo.png);  
+}
+.bottomBox{
+    border-bottom: 1px solid  rgba(0, 0, 0, 0.267);
+    padding:10px;
+    position: relative;
 }
 
-.bottomBoxes{
-    display: grid;
-    grid-template-columns: 200px 200px;
-    grid-template-rows: repeat(5, fr)
-    
+/*/////////////// making the page responsive  /////////////////*/
+@media (min-width: 700px){
+    .main{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 300px auto auto auto;
+    }
+    .body{
+        grid-column: 1/2;
+    }
+    /* ////////////////  the header  /////////////// */
+    .header, .footer{
+       grid-column: 1/3; 
+    }
+    .header{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+    .circle{
+        height:120px;
+        width: 120px;
+        left: 10%;
+        position: relative;
+        top: 80px;
+        align-content: center;
+    }
+    .ligneTransparent{
+    grid-column: 2/3;
+    display: flex;
+    }
+   
+
+
+    /*///////////// the right side //////////*/
+    .right{
+        grid-column: 2/3;
+        grid-row: 2/3;
+        display: grid;
+        grid-template-rows: auto auto auto;
+        
+    }
+    .topBoxes, .bottomBoxes{
+        display: flex;
+        flex-direction: column;
+    }
+    .topBoxes{
+        height: 100px;
+        padding: 50px;
+    } 
+    .bottomBoxes{
+        padding: 20px;
+
+    }
 }
