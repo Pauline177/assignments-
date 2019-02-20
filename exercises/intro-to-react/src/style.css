@@ -1,0 +1,14 @@
+.first{
+    background-color: green;
+}
+.flex-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: "https://tse3.mm.bing.net/th?id=OIP.sm4EJdQgMyzaW53Hsl8deAHaFj&pid=15.1&P=0&w=246&h=185";
+    height: 100%;
+    width: 100%;
+}
+.flex-container p{
+    font-family: sans-serif;
+}
