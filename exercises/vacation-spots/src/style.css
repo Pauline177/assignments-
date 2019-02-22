@@ -1,0 +1,10 @@
+.cards{
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    background-repeat: no-repeat;
+}
+.cards h1{
+    font-family: 'Courier New', Courier, monospace;
+    color: red;
+}

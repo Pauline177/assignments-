@@ -17,12 +17,6 @@ form.addEventListener("submit", function (event) {
     h1.textContent = totalPrice + " coins"
     container.appendChild(h1)
    
-    // if(exist){
-    //     container.removeChild(container.childNodes[container.childNodes.length - 1])
-    //     container.appendChild(h1)
-    // } else {
-    // container.appendChild(h1)
-    //     exist = true
-    // }
+    
     
 })

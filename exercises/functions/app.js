@@ -53,3 +53,8 @@ console.log(change(mystr))
 // var leftsidetext = mystr.slice(middlePoint, mystr.length);
 
 // console.log(leftsidetext)
+var arr = [1,2,3,3]
+var sum = arr.reduce(function add (final,num){
+    return final += num;
+},5)
+console.log(sum)

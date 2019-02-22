@@ -206,12 +206,20 @@ h1{
      position: relative;
      top: 40%;
      }
+     .flesh{
+       width: 200px;
+       height: 80px;
+       position: relative;
+       left: 20px;
+       top: 15%;
+       
+     }
 
     /* //////////////the body */
     .whiteBody{
         grid-column: 1/2;
         display: grid;
-        grid-template-rows: repeat(3, auto auto auto);
+        grid-template-rows: repeat(3, 1fr);
     }
     .whiteBody p{
         font-size: 17px;
@@ -231,9 +239,6 @@ h1{
     .words{
         background-size: cover;
     }
-    .logos{
-        /* justify-content: space-between; */
-    }
     .logos h1{
         font-size: 70px;
         padding: 40px;
@@ -246,7 +251,7 @@ h1{
         grid-column: 2/3;
         grid-row: 2/3;
         display: grid;
-        grid-template-rows: 918px 783px 680px;
+        grid-template-rows: repeat(3, 1fr);
         
     }
     .topBoxes, .bottomBoxes{
