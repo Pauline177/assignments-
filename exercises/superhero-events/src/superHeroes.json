@@ -1,0 +1,19 @@
+{
+    "superHeroes": [
+        {
+            "name": "Wonder woman",
+            "imgurl": "https://www.dailydot.com/wp-content/uploads/4de/ea/bdcaebda7a8537d4-1280x640.png",
+            "phrase": "I am wonder woman"
+        },
+        {
+            "name": "Super man",
+            "imgurl": "https://colettestirling.files.wordpress.com/2013/03/superman_75.png",
+            "phrase": "You are much stronger than you are. trust me"
+        },
+        {
+            "name": "NIKITA",
+            "imgurl": "http://cdn.123moviess.net/upload/2017/01/movie_nikita-season-3-2012.jpg",
+            "phrase": "People can change"
+        }   
+    ]
+}
