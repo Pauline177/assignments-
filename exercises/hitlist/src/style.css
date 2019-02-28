@@ -1,0 +1,17 @@
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 2px solid red;
+    background-image: url("https://media.istockphoto.com/photos/scenic-view-of-sunrise-mountains-layer-evening-at-north-thailand-picture-id865745778?s=2048x2048");
+    background-size: cover;
+}
+.box{
+    height: 200px;
+    width: 800px;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;g
+    border: 3px solid red;
+    margin: 5px;
+    color: rgba(103, 22, 150, 0.842)
+}
