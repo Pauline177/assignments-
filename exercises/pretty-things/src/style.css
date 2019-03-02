@@ -1,0 +1,17 @@
+/* *{
+    box-sizing: border-box;
+    margin: 0px;
+} */
+.image{
+    width: 400px;
+    height: 300px;
+    border: 5px solid green;
+    
+}
+.todoBox{
+    width: auto;
+    height: auto;
+    border: 3px solid aqua;
+    margin: 30px;
+    padding: 20px;
+}
