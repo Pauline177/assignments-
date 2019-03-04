@@ -6,7 +6,11 @@ import Todo from './Todo.js'
 
 const List = (props) => {
 
-const mappedList = props.todos.map(todo => <Todo {...todo} key={todo._id}/>)
+const mappedList = props.todos.map(todo => <Todo {...todo}
+             handleDelete={props.handleDelete}
+             handleEdit={props.handleEdit}
+             key={todo._id}
+        />)
     return (
         <div >
             { mappedList }

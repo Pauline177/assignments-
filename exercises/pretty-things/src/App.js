@@ -7,9 +7,9 @@ class App extends Component {
     constructor() {
         super()
         this.state = {
-            title: this.title,
-            description: this.description,
-            imgUrl: this.imgUrl,
+            title: "",
+            description: "",
+            imgUrl: "",
             todos: [],
         }
     }
@@ -38,9 +38,14 @@ class App extends Component {
                 handleSubmit={this.handleSubmit}
                 title={this.state.title}
                 description={this.state.description}
-                imgUrl={this.state.imgUrl} />
+                imgUrl={this.state.imgUrl} 
+                text="Save todo"/>
                 
-                <List todos={this.state.todos} />
+
+                <List todos={this.props.todos} 
+                handleDelete={this.props.handleDelete}
+                handleEdit={this.props.handleEdit}
+                />
             </div>
         )
     }

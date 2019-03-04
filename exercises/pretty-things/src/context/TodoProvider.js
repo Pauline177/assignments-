@@ -10,14 +10,6 @@ class TodoProvider extends Component{
             todos: []
         }
     }  
-    
-    getTodos = () => {
-        axios.get("https://api.vschool.io/pauline/todo").then(res => {
-            this.setState({
-                todos: res.data
-            })
-        }).catch(err => console.log(err))
-    }
 
 getTodos = () => {
     axios.get("https://api.vschool.io/pauline/todo").then(res => {
@@ -39,12 +31,34 @@ addTodo = (given) => {
     }).catch(err => console.log(err))
 }
 
+handleDelete = (_id) => {
+    axios.delete(`https://api.vschool.io/pauline/todo/${_id}`).then(res => {
+        this.setState(prevState => {
+            return {
+                todos: prevState.todos.filter(todo => todo._id !== _id)
+            }
+        })
+    }).catch(err => console.log(err))
+}
+
+handleEdit = (_id, changes) => {
+    axios.put(`https://api.vschool.io/pauline/todo/${_id}`, changes).then(res => {
+        const changedTodo = res.data
+        this.setState(prevState => {
+            return {
+                todos: prevState.todos.map(todo => todo._id === _id ? changedTodo : todo)
+            }
+        })
+    }).catch(err => console.log(err))
+}
     render(){
         return (
             <TodoContext.Provider value={{
                 todos: this.state.todos,
                 getTodos: this.getTodos,
                 addTodo: this.addTodo,
+                handleDelete: this.handleDelete,
+                handleEdit: this.handleEdit,
 
             }}>
                 {this.props.children}
