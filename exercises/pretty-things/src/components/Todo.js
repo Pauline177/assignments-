@@ -25,7 +25,7 @@ class Todo extends Component {
     handleSubmit = e => {
         e.preventDefault()
             const changes = {
-                tile: this.state.title,
+                title: this.state.title,
                 description: this.state.description,
                 imgUrl: this.state.imgUrl,
             }
