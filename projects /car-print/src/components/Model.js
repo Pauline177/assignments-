@@ -4,7 +4,8 @@ const Model = (props) => {
     const {Model_Name} = props
     return (
         <div>
-            <h4 style={{color: "aqua"}} >{Model_Name} </h4>
+            <input type="radio" value={Model_Name}  name="carModels"/>
+            <h4 style={{color: "green"}} >{Model_Name} </h4>
         </div>
     )
 }

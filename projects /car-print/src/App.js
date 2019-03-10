@@ -1,52 +1,60 @@
 import React, {Component} from 'react'
+import Home from './components/Home.js'
 import Makes from'./components/Makes.js'
 import Models from './components/Models.js'
-import axios from 'axios'
-import Years from './components/Years.js'
+import Results from './components/Results'
+import { Route, Switch, withRouter} from 'react-router-dom'
+import './style.css'
+import {withCar} from './context/CarProvider.js'
 
 class App extends Component{
     constructor(){
         super()
         this.state = {
-            makes: [],
-            makeee:"aston martin",
-            models: [],
-            years: "2015",
+            year: "",
+            miles: "",
+            carMake: "",
+            // makes: [],
+            // models: [],
             
         } 
     }
 
     componentDidMount(){
-        this.getAllMakes()
-        this.getAllModels()
+        this.props.getAllMakes()
+        // this.props.getAllModels()
     }
     
-    getAllMakes = () => {
-        axios.get("https://vpic.nhtsa.dot.gov/api/vehicles/GetAllMakes/results/Make_Name?format=json").then(res => {
-            this.setState({
-                makes: res.data.Results
-            }) 
-        }).catch(err => console.log(err))
+
+    handleChange = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
     }
-    
-    getAllModels = () => {
-        axios.get(`https://vpic.nhtsa.dot.gov/api/vehicles/GetModelsForMakeYear/make/${this.state.makeee}/modelyear/${this.state.years}?format=json`).then(res => {
+
+    handleSubmit = (e) => {
+        e.preventDefault()
             this.setState({
-                models: res.data.Results
+                year: "",
+                miles: "",
             })
-        }).catch(err => console.log(err))
     }
+   
     
     render(){
         return (
             <div>
-                < Years /> 
-                <Makes makes={this.state.makes}/>
-                <Models models={this.state.models}/>
+                <Switch>
+                    <Route exact path="/" render={routerProps => <Home {...routerProps}  /> } />
+                    <Route path="/Makes" render={routerProps => <Makes {...routerProps} makes={this.state.makes} getAllMakes={this.getAllMakes}/>} />
+                    <Route path="/Models" render={routerProps => <Models {...routerProps} models={this.state.models} />} />
+                    <Route path="/Results" render={routerProps => <Results {...routerProps}  />} />
+                    <Route path="/Home" render={routerProps => <Home {...routerProps}  />} />
+                </Switch>
             </div>
         )
     }
 
 }
 
-export default App
+export default withCar(withRouter(App))
