@@ -13,7 +13,8 @@ class Models extends Component  {
     }
 
 componentDidMount(){
-    this.props.getAllModels()
+    console.log(this.props)
+    this.props.getAllModels(this.props.year, this.props.carMake)
 } 
 
     render (){
@@ -26,8 +27,11 @@ componentDidMount(){
         return (
         <div> 
             <Link to="/Makes"> <h4>Back</h4> </Link>
+            <div className="models"> 
             {mappedModels}
-            <Link to='/Results'>See Results</Link>
+            </div>
+            
+            <Link to='/Results' className="to-results-link">See Results ->>> </Link>
         </div>
     )
     }

@@ -9,9 +9,6 @@ class CarProvider extends Component{
         this.state = {
             makes: [],
             models: [],
-            year: '',
-            miles:'',
-            // carMake: "",
         }
     }
 
@@ -23,10 +20,14 @@ class CarProvider extends Component{
         }).catch(err => console.log(err))
     }
 
-    getAllModels = () => {
-        console.log(this.state.carMake)
-        console.log(this.state.year)
-        axios.get(`https://vpic.nhtsa.dot.gov/api/vehicles/GetModelsForMakeYear/make/${this.state.carMake}/modelyear/${this.state.year}?format=json`).then(res => {
+
+    getMakeBySearch = () => {
+        axios.get("")
+    }
+    getAllModels = (year, carMake) => {
+        // console.log(carMake)
+        // console.log(year)
+        axios.get(`https://vpic.nhtsa.dot.gov/api/vehicles/GetModelsForMakeYear/make/${carMake}/modelyear/${year}?format=json`).then(res => {
         console.log(res.data)    
         this.setState({
                 models: res.data.Results
@@ -34,19 +35,12 @@ class CarProvider extends Component{
         }).catch(err => console.log(err))
     }
 
-    handleChange = (e) => {
-        this.setState({
-            [e.target.name]: e.target.value
-        })
-    }
+    // handleChange = (e) => {
+    //     this.setState({
+    //         [e.target.name]: e.target.value
+    //     })
+    // }
 
-    handleSubmit = (e) => {
-        e.preventDefault()
-            this.setState({
-                // year: "",
-                // miles: "",
-            })
-    }
 
     render(){
         return(
@@ -56,11 +50,10 @@ class CarProvider extends Component{
                 models: this.state.models,
                 getAllMakes: this.getAllMakes,
                 getAllModels: this.getAllModels,
-                handleChange: this.handleChange,
-                handleSubmit: this.handleSubmit,
-                year: this.state.year,
-                miles: this.state.miles,
-                carMake: this.state.carMake,
+                // handleChange: this.handleChange,
+                // year: this.state.year,
+                
+                // carMake: this.state.carMake,
 
             }} >
                 {this.props.children}
@@ -72,7 +65,7 @@ class CarProvider extends Component{
 /// higher order component
 export const withCar = C => props => (
     <CarContext.Consumer>
-        {value => <C {... props} {...value} /> }
+        {value => <C {...props} {...value} /> }
     </CarContext.Consumer>
 )
 

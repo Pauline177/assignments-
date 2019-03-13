@@ -2,7 +2,7 @@ import React from 'react'
 import {withCar} from '../context/CarProvider.js'
 
 const Make = (props) => {
-    const {Make_Name, handleChange} = props
+    const {Make_Name, handleChange } = props
     console.log(props)
     return (
         <div className="make-div">

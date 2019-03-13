@@ -35,7 +35,7 @@ class App extends Component{
     handleSubmit = (e) => {
         e.preventDefault()
             this.setState({
-                year: "",
+                // year: "",
                 miles: "",
             })
     }
@@ -45,9 +45,20 @@ class App extends Component{
         return (
             <div>
                 <Switch>
-                    <Route exact path="/" render={routerProps => <Home {...routerProps}  /> } />
-                    <Route path="/Makes" render={routerProps => <Makes {...routerProps} makes={this.state.makes} getAllMakes={this.getAllMakes}/>} />
-                    <Route path="/Models" render={routerProps => <Models {...routerProps} models={this.state.models} />} />
+                    <Route exact path="/" render={routerProps => <Home {...routerProps} 
+                                                                        miles={this.state.miles}
+                                                                        handleChange={this.handleChange} 
+                                                                        year={this.state.year} /> } />
+                                                                        
+                    <Route exact path="/Makes" render={routerProps => <Makes {...routerProps} 
+                                                                        handleChange={this.handleChange} 
+                                                                        getAllMakes={this.getAllMakes}/>} />
+
+                    <Route exact path="/Models" render={routerProps => <Models  {...routerProps} 
+                                                                        carMake={this.state.carMake} 
+                                                                        year={this.state.year} 
+                                                                        models={this.state.models} />} />
+
                     <Route path="/Results" render={routerProps => <Results {...routerProps}  />} />
                     <Route path="/Home" render={routerProps => <Home {...routerProps}  />} />
                 </Switch>
