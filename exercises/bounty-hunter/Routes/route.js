@@ -40,32 +40,69 @@ let bountyHunters = [
 //we put together requests that has the same endpoints. 
 // no id 
 
-userRouter.route("/")
-    .get((req, res) => {
-        res.send(bountyHunters)
-    })
-    .post((req, res) => {
-        const addedBounty = req.body
-        addedBounty._id = uuid()
-        bountyHunters.push(addedBounty)
-        res.send(addedBounty)
-    })
+
+////this line allows the request to add the request to the response. 
+// once the line is hit we make the request then when it hit next it 
+//sends it to the next line
+userRouter.use((req,res,next) => {
+    req.hunters = bountyHunters
+    next()
+})
+
+// userRouter.get("/search", (req, res) => {
+//     const {living, bountyAmount} = req.query
+//     if(living && bountyAmount) {
+//         const foundBounties = bountyHunters.filter(hunter => {
+//             if(hunter.living.toString() === living && hunter.bountyAmount <= Number(bountyAmount) ){
+//                 return hunter
+//             }
+//         })  
+//         res.send(foundBounties)
+//     } else if(living){
+//         const foundBounties = bountyHunters.filter( hunter => {
+//             if(hunter.living.toString() === living){
+//                 return hunter
+                
+//             } 
+//         }) 
+//         res.send(foundBounties)
+//     }else if(bountyAmount){
+//         const foundBounties = bountyHunters.filter(hunter => {
+//             if(hunter.bountyAmount <= Number(bountyAmount)){
+//                 return hunter
+//             }
+//         })
+//         res.send(foundBounties)
+//     } 
+// })
 
 
-userRouter.route("/:_id")
-    .get((req, res) => {
-        const foundBounty = bountyHunters.find(hunter => hunter._id === req.params._id)
-        res.send(foundBounty)
-    })
-    .delete((req, res) => {
-        const removedBounty = bountyHunters.filter(hunter => hunter._id !== req.params._id)
-        bountyHunters = removedBounty
-        res.send(bountyHunters)
-    })
-    .put((req,res) => {
-        const foundBounty = bountyHunters.find(hunter => hunter._id === req.params._id)
-        Object.assign(foundBounty, req.body)
-        res.send(foundBounty)
-    })
+// userRouter.route("/")
+//     .get((req, res) => {
+//         res.send(bountyHunters)
+//     })
+//     .post((req, res) => {
+//         const addedBounty = req.body
+//         addedBounty._id = uuid()
+//         bountyHunters.push(addedBounty)
+//         res.send(addedBounty)
+//     })
+
+
+// userRouter.route("/:_id")
+//     .get((req, res) => {
+//         const foundBounty = bountyHunters.find(hunter => hunter._id === req.params._id)
+//         res.send(foundBounty)
+//     })
+//     .delete((req, res) => {
+//         const removedBounty = bountyHunters.filter(hunter => hunter._id !== req.params._id)
+//         bountyHunters = removedBounty
+//         res.send(bountyHunters)
+//     })
+//     .put((req,res) => {
+//         const foundBounty = bountyHunters.find(hunter => hunter._id === req.params._id)
+//         Object.assign(foundBounty, req.body)
+//         res.send(foundBounty)
+//     })
 
 module.exports = userRouter
