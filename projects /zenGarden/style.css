@@ -20,7 +20,8 @@
     box-sizing: border-box;
 }
 
-        /* the whole page */
+        /*///// the whole page */
+
 .main{
     display: grid;
     grid-template-rows: 250px auto auto auto;
@@ -34,6 +35,7 @@
     background-repeat: no-repeat;
 
 }
+
 .circle{
     height:50px;
     width: 50px;
@@ -151,11 +153,17 @@ h1{
     
 } 
 .topBox{
-    border-bottom: 1px solid rgba(0, 0, 0, 0.267);
+    border-bottom: 0.3px solid rgba(0, 0, 0, 0.267);
     padding:10px;
+    color: #c0cac3;
+}
+.topBox a {
+    text-decoration: none;
+    color: #607476;
 }
 .topBox p{
     font-family: first;
+    color: #607476;
 }
 .bottomBoxes{
     background-color: rgba(24, 146, 24, 0.192);
@@ -193,26 +201,45 @@ h1{
          grid-template-columns: 2fr 1fr;
      }
      .circle{
-         height:120px;
-         width: 120px;
-         left: 10%;
-         position: relative;
-         top: 80px;
-         align-content: center;
+        height:120px;
+        width: 120px;
+        left: 15%;
+        position: relative;
+        top: 150px;
+        margin-right: 100px;
      }
+     .all{
+        position: relative;
+        top: -25%
+     }
+    
+     .all h1{
+        font-size: 50px;
+        position: relative;
+        left: 10%;
+     }
+     .all h3{
+        font-size: 25px;
+        position: relative;
+        left: 20px;
+        top: -20px;
+     }
+
      .ligneTransparent{
-     grid-column: 2/3;
-     display: flex;
-     position: relative;
-     top: 40%;
+        display: flex;
+        position: relative;
+        top: 40%;
+        grid-column: 2/3;
+     
      }
+    
      .flesh{
        width: 200px;
        height: 80px;
        position: relative;
        left: 20px;
        top: 15%;
-       
+       margin: 2px solid;
      }
 
     /* //////////////the body */
@@ -238,6 +265,11 @@ h1{
     }
     .words{
         background-size: cover;
+        padding: 40px;
+    }
+    .words p{
+        font-size: 30px;
+        display: inline-block;
     }
     .logos h1{
         font-size: 70px;
