@@ -1,28 +1,30 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { Switch, Route, Redirect } from 'react-router-dom'
+import { withUser } from './context/UserProvider.js'
+import AuthContainer from './components/auth/AuthContainer.js'
+import Home from './components/Home.js'
+import ProtectedRoute from './shared/ProtectedRoute.js'
 
-class App extends Component {
-  render() {
+const App = props => {
+    const { user, token, logout } = props
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+        <div>
+            {token && <button onClick={logout}> Logout</button>}
+            <Switch>
+                <Route exact path="/" render={() => token ? <Redirect to="/home" /> : <Redirect to="/login" /> } />
+                <Route
+                    path="/login"
+                    render={rProps => token ? <Redirect to="/home"/> : <AuthContainer {...rProps} />} />
+                <ProtectedRoute 
+                    token={token}
+                    path="/home"
+                    redirectTo="/login"
+                    component={Home} 
+                    username={user.username}
+                    logout={logout}/>
+            </Switch>
+        </div>
+    )
 }
 
-export default App;
+export default withUser(App) 

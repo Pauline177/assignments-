@@ -1,9 +1,9 @@
 const mongoose = require('mongoose')
-const Shema = mongoose.Schema
+const Schema = mongoose.Schema
 const bcrypt = require('bcrypt')
 
 const userSchema = new Schema ({
-    usrname:{
+    username:{
         type: String,
         unique: true,
         lowecase: true,
@@ -38,7 +38,7 @@ const userSchema = new Schema ({
 ///pre-save hook for password ecnryption
 userSchema.pre("save", function(next){
     const user = this 
-    if(!user.isModofied("password")) return next() 
+    if(!user.isModified("password")) return next() 
     bcrypt.hash(user.password, 10, (err, hash) => {
         if(err) return next(err)
         user.password = hash
@@ -47,7 +47,7 @@ userSchema.pre("save", function(next){
 })
 
 ////// checkpassword method
-userSchema.methods.checkPassowrd = function(passwordAttempt, callback){
+userSchema.methods.checkPassword = function(passwordAttempt, callback){
     bcrypt.compare(passwordAttempt, this.password, (err, isMatch) => {
         if(err) return callback(err)
         callback(null, isMatch)

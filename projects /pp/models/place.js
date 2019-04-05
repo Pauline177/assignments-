@@ -9,6 +9,9 @@ const PlaceSchema = new Schema({
     imgUrl: {
         type: String,
     },
+    price:{
+        type: String,
+    },
     postedAt:{
         type: Date,
         default: Date.now,

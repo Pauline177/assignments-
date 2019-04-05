@@ -23,7 +23,7 @@ const postSchema = new Schema ({
     },
     thread: {
         type: String,
-        enum: ["recipes", "entertainment", "news", "sports", "culture", "science", "celebrity", "awcute", "hobbies", "politics", "music", "weather", "architecture"],
+        enum: ["recipes", "entertainment", "news", "sports", "culture", "science", "celebrity", "awcute","humor", "hobbies", "politics", "music", "weather", "architecture"],
         required: true
     },
     comments:[{

@@ -9,8 +9,7 @@ ReactDOM.render(
         <UserProvider>
             <App />
         </UserProvider>
-    </BrowserRouter>, 
-document.getElementById('root'))
+    </BrowserRouter>, document.getElementById('root'))
 
 
 

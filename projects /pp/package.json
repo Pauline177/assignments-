@@ -6,11 +6,15 @@
   "dependencies": {
     "bcrypt": "^3.0.5",
     "dotenv": "^7.0.0",
-    "express-jwt": "^5.3.1",
     "express": "^4.16.4",
+    "express-jwt": "^5.3.1",
+    "firebase": "^5.9.3",
     "jsonwebtoken": "^8.5.1",
+    "link": "^0.1.5",
+    "mongoose": "^5.4.20",
     "morgan": "^1.9.1",
-    "mongoose": "^5.4.20"
+    "react-native": "^0.59.3",
+    "react-native-image-picker": "^0.28.1"
   },
   "devDependencies": {},
   "scripts": {

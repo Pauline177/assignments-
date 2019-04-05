@@ -28,7 +28,7 @@ class PostsList extends Component {
 
         this.setState({
             caption: "",
-            imgUrl: ""
+            imgUrl: "",
         })
     }
 
