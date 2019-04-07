@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
-import AuthForm from './AuthForm.js'
-import { withAdmin } from '../context/adminProvider.js'
+import AuthForm from '../AuthForm.js'
+import { withAdmin } from '../../context/adminProvider.js'
+import Navbar from './Navbar.js'
+import Description from './Description.js'
 
 class Home extends Component {
     constructor() {
@@ -52,22 +54,30 @@ class Home extends Component {
     render() {
         return (
             <div>
-                HOME
-                <div>
+                <Navbar />
+                <div className="authBox">
                     {this.state.formToggle ?
                         <>
-                            <h2>Signup</h2> or <h2 onClick={this.formToggler}>Login</h2>
+                            <span className="line">
+                                <h2>Signup</h2> or 
+                                <h2 onClick={this.formToggler}>Login</h2>
+                            </span>
+
                             <AuthForm
                                 adminname={this.state.adminname}
                                 password={this.state.password}
                                 handleChange={this.handleChange}
                                 handleSubmit={this.handleSignupSubmit}
                                 buttonText="signup"
-                                placeholder="create adminn ame" />
+                                placeholder="create admin name" />
                         </>
                         :
                         <>
-                            <h2 onClick={this.formToggler}>Signup</h2> or <h2>Login</h2>
+                            <span className="line">
+                            <h2 onClick={this.formToggler}>Signup</h2> or 
+                            <h2>Login</h2>
+                            </span>
+                            
                             <AuthForm
                                 adminname={this.state.adminname}
                                 password={this.state.password}
@@ -78,6 +88,7 @@ class Home extends Component {
                         </>
                     }
                 </div>
+                <Description  /> 
             </div>
 
         )

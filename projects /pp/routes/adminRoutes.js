@@ -4,7 +4,6 @@ const jwt = require('jsonwebtoken')
 const adminRouter = express.Router()
 
 adminRouter.post("/signup", (req, res, next) => {
-    console.log('route hit')
     Admin.findOne({adminname: req.body.adminname.toLowerCase()}, (err, admin) => {
             if(err){
                 res.status(500)

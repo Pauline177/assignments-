@@ -10,7 +10,7 @@ const OnePlace = props => {
             </div>
 
             <div>
-                <img src={imgUrl} />
+                <img src={imgUrl || "https://via.placeholder.com/200x200" } height="300" width="300" alt="uploaded image" />
             </div>
 
             <div>

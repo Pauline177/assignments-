@@ -2,11 +2,11 @@ import React from 'react'
 
 
 const PlacesForm = props => {
-    const { vacinity, imgUrl, price, postedAt,handleUploadChange, handleUploadSubmit, handleSubmit, handleChange, placeFormToggle, placeFormToggler } = props
+    const { vacinity, imgUrl, price, postedAt, handleUploadChange, handleSubmit, handleChange, placeFormToggle, placeFormToggler } = props
     return (
-        <div onClick={placeFormToggler}>
+        <div >
 
-            <form onSubmit={handleSubmit} className={`placeForm placeForm-${placeFormToggle ? "on" : "off"}`}>
+            <form className={`placeForm placeForm-${placeFormToggle ? "on" : "off"}`}>
                 <input
                     type="text"
                     name="vacinity"
@@ -16,11 +16,8 @@ const PlacesForm = props => {
                     required />
                 <input
                     type="file"
-                    name="imgUrl"
-                    value={imgUrl}
-                    onChange={handleChange}
-                    accept="image/*"
-                    placeholder="upload images" required />
+                    onChange={handleUploadChange}
+                    ref={fileInput => fileInput = fileInput} />
                 <input
                     type="text"
                     name="price"
@@ -34,8 +31,8 @@ const PlacesForm = props => {
                     value={postedAt}
                     onChange={handleChange}
                     placeholder="date posted"
-                    required />
-                <button> Save vacinity </button>
+                     />
+                <bttn onClick={handleSubmit} > Save vacinity </bttn>
             </form>
         </div>
     )

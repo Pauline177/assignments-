@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PlacesForm from './PlacesForm.js'
 import OnePlace from './OnePlace.js'
 import {withAdmin} from '../context/adminProvider.js'
+import {storage} from '../firebase'
 
 class Places extends Component {
     constructor() {
@@ -10,7 +11,7 @@ class Places extends Component {
             vacinity: "",
             image: null,
             imgUrl: "",
-    
+
             price: "",
             PostedAt: "",
             placeFormToggle: false,
@@ -46,7 +47,7 @@ class Places extends Component {
         this.props.addPlace(this.state)
         this.setState({
             vacinity: "",
-            imgUrl: "",
+            // imgUrl: "",
             price: "",
             PostedAt: ""
         })
@@ -61,16 +62,16 @@ class Places extends Component {
                 console.log(error)
 
             },() => {
-                storage.ref('images').child(image.name).getDownloadURL().then(url => {
-                    console.log(url)
-                    this.setState({url})
+                storage.ref('images').child(image.name).getDownloadURL().then(imgUrl => {
+                    console.log(imgUrl)
+                    this.setState({imgUrl})
                 })
             })
     }
 
 
     render() {
-        const {vacinity, imgUrl, price, PostedAt} = this.state
+        const {vacinity,image, imgUrl, price, PostedAt} = this.state
         return (
             <div>
                 upload pictures  of the available rooms.

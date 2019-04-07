@@ -2,8 +2,8 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 const bcrypt = require ('bcrypt')   //// we only need bcrypt for auth
 
-const adminSchema = new Schema ({
-    adminname:{
+const userSchema = new Schema ({
+    username:{
         type: String,
         required: true,
         unique: true,
@@ -15,11 +15,11 @@ const adminSchema = new Schema ({
     },
     isAdmin:{
         type:Boolean, 
-        default: true,
+        default: false,
     }
 })
 
-adminSchema.pre("save", function(next){
+userSchema.pre("save", function(next){
     /// can also assign this = admin, this would then stand for admin
     if(!this.isModified("password")) return next()
     bcrypt.hash(this.password, 10, (err, hash) => {
@@ -30,11 +30,11 @@ adminSchema.pre("save", function(next){
 })
 
 //// function that checks for the password
-adminSchema.methods.checkPassword = function(passwordAttempt, callback){
+userSchema.methods.checkPassword = function(passwordAttempt, callback){
     bcrypt.compare(passwordAttempt, this.password, (err, isMatch) => {
         if(err) return callback(err)
         callback(null, isMatch)
     })
 }
 
-module.exports = mongoose.model("Admin", adminSchema)
+module.exports = mongoose.model("User", userSchema)
