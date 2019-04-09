@@ -7,9 +7,10 @@ import ProtectedRoute from './shared/ProtectedRoute.js'
 import './style.css'
 
 
+
 class App extends Component {
     render() {
-        const { token } = this.props
+        const { token, logout } = this.props
         return (
             <div>
                 <Switch>
@@ -23,6 +24,7 @@ class App extends Component {
                         component={Places} />
 
                 </Switch>
+               
             </div>
         )
     }

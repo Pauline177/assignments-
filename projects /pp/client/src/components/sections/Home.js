@@ -3,6 +3,7 @@ import AuthForm from '../AuthForm.js'
 import { withAdmin } from '../../context/adminProvider.js'
 import Navbar from './Navbar.js'
 import Description from './Description.js'
+import Footer from './Footer.js'
 
 class Home extends Component {
     constructor() {
@@ -89,6 +90,7 @@ class Home extends Component {
                     }
                 </div>
                 <Description  /> 
+                <Footer />
             </div>
 
         )

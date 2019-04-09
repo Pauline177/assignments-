@@ -24,17 +24,15 @@ placesRouter.get("/", (req, res, next) => {
     })
 })
 
-// placesRouter.delete("/id", (req, res, next) => {
-//     Place.findByIdAndRemove({_id: req.params.id}, (err, place))
-//     if(err){
-//         res.status(500)
-//         return next(err)
-//     }
-//     // const response = {
-//     //     message: "vacinity delete",
-//     //     id: place._id
-//     // }
-//     return res.status(200).send("vacinity deleted")
-// })
+placesRouter.delete("/:_id", (req, res, next) => {
+    Place.findByIdAndRemove({_id: req.params._id, admin: req.admin._id,}, req.body,(err, place) => {
+        if(err){
+            res.status(500)
+            return next(err)
+        }
+        return res.status(200).send("vacinity deleted")
+    })
+    
+})
 
 module.exports = placesRouter

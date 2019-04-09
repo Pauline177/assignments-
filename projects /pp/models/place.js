@@ -6,7 +6,7 @@ const PlaceSchema = new Schema({
         type:String,
         required: true,
     },
-    imgUrl: {
+    imgUrl1: {
         type: String,
     },
     price:{

@@ -6,10 +6,11 @@ const Navbar = () => {
         <div>
             <div className="firstLine">
                 <div className="menu">
-                   ||| MENU
+                    <span>|||</span> 
+                    <h4> MENU</h4>
                 </div>
                 <div className="whereWork">
-                    <h1> WhereWork</h1>
+                    <h1> WhereWork ✺</h1>
                 </div>
             </div>
             <div className="picture">
