@@ -6,7 +6,7 @@ const PlacesForm = props => {
     return (
         <div >
 
-            <form className={`placeForm placeForm-${placeFormToggle ? "off" : "on"}`}>
+            <form  onSubmit={handleSubmit} className={`placeForm placeForm-${placeFormToggle ? "off" : "on"}`}>
                 <input
                     type="text"
                     name="vacinity"
@@ -18,14 +18,14 @@ const PlacesForm = props => {
                     type="file"
                     onChange={handleUploadChange}
                     ref={fileInput => fileInput = fileInput} />
-                <input
+                {/* <input
                     type="file"
                     onChange={handleUploadChange}
                     ref={fileInput => fileInput = fileInput} />
                 <input
                     type="file"
                     onChange={handleUploadChange}
-                    ref={fileInput => fileInput = fileInput} />
+                    ref={fileInput => fileInput = fileInput} /> */}
                 <input
                     type="text"
                     name="price"
@@ -40,7 +40,7 @@ const PlacesForm = props => {
                     onChange={handleChange}
                     placeholder="date posted"
                      />
-                <button className="saveButton" onClick={handleSubmit} > Save vacinity </button>
+                <button className="saveButton"> Save vacinity </button>
             </form>
         </div>
     )

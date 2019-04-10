@@ -15,8 +15,10 @@ const PlaceSchema = new Schema({
     postedAt:{
         type: Date,
         default: Date.now,
-        // required: true,
-    }
+        required: true,
+    },
+    
+
 })
 
 

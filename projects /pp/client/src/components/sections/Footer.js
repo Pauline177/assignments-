@@ -8,9 +8,10 @@ const Footer = () => {
             <div className="footer-col1">
                 <h2>WhereWork ✺</h2>
                 <h6>connect with us </h6>
-                <SocialIcon url="https://github.com/Pauline177" />
-                <SocialIcon url="https://www.linkedin.com/in/pauline-makoma/" />
-                <SocialIcon url="https://www.instagram.com/paldym/" />
+                <SocialIcon style={{margin: 20}} url="https://github.com/Pauline177" />
+                <SocialIcon style={{margin: 20}} url="https://www.linkedin.com/in/pauline-makoma/" />
+                <SocialIcon style={{margin: 20}} url="https://www.instagram.com/paldym/" />
+                
             </div>
             <div className="footer-col">
                 <h4>Search</h4>
@@ -37,6 +38,7 @@ const Footer = () => {
                 <span>Terms of Use</span>
                 <span> Privacy Policy</span>
             </div>
+            <h2> © Wherework 2019 created by Pauline Makoma </h2>
         </div>
     )
 }

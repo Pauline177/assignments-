@@ -3,7 +3,7 @@ import PlacesForm from './PlacesForm.js'
 import OnePlace from './OnePlace.js'
 import { withAdmin } from '../context/adminProvider.js'
 import { storage } from '../firebase'
-import moment from 'moment'
+
 class Places extends Component {
     constructor() {
         super()
@@ -18,13 +18,10 @@ class Places extends Component {
 
             price: "",
             placeFormToggle: false,
+            postedAt: "",
 
         }
     }
-
-   PostedAt= () => {
-    moment().startOf('hour').fromNow()
-   } 
 
     placeFormToggler = () => {
         this.setState(prevState => ({ placeFormToggle: !prevState.placeFormToggle }))
@@ -57,7 +54,7 @@ class Places extends Component {
     handleSubmit = e => {
         e.preventDefault()
         const { image1, image2, image3 } = this.state
-        this.props.addPlace(this.state)
+        
         console.log(image1)
 
         
@@ -72,32 +69,38 @@ class Places extends Component {
         }, () => {
             storage.ref('images').child(image1.name).getDownloadURL().then(imgUrl1 => {
                 console.log(imgUrl1)
-                this.setState({ imgUrl1})
+                const newObj = {
+                    vacinity: this.state.vacinity,
+                    imgUrl1: imgUrl1
+                }
+                console.log(newObj)
+                this.props.addPlace(newObj)
+                this.setState({ 
+                    imgUrl1
+                })
             })
         })
 
-        this.setState({
-            vacinity: "",
-            imgUrl1: "",
-            imgUrl2: "",
-            imgUrl3: "",
-            price: "",
-            PostedAt: ""
-        })
+        // this.setState({
+        //     vacinity: "",
+        //     imgUrl1: "",
+        //     imgUrl2: "",
+        //     imgUrl3: "",
+        //     price: "",
+        //     PostedAt: ""
+        // })
     }
 
 
     render() {
-        
         const { vacinity, image, imgUrl1,imgUrl2, imgUrl3, price } = this.state
-
-        
+        const {admin, token} = this.props
         return (
             <div className="places">
-                upload pictures  of the available rooms.
+                 Available rooms.
                 <button onClick={this.props.logout} className="logout"> Logout ☒</button>
                 <div>
-                    <button onClick={this.placeFormToggler} className="upload">Upload a new space ⇫</button>
+                 {admin &&   <button onClick={this.placeFormToggler} className="upload">Upload a new space ⇫</button> }
                 </div>
                 <PlacesForm
                     vacinity={vacinity} imgUrl1={imgUrl1}  imgUrl2={imgUrl2}  imgUrl3={imgUrl3} price={price} image={image}
@@ -110,7 +113,7 @@ class Places extends Component {
                 />
                 <div className="mapping-div">
                 {this.props.places.map(place => <OnePlace
-                    vacinity={place.vacinity} imgUrl1={place.imgUrl1}  imgUrl2={place.imgUrl2}  imgUrl3={place.imgUrl3} price={place.price} PostedAt={this.PostedAt}
+                    vacinity={place.vacinity} imgUrl1={place.imgUrl1}  imgUrl2={place.imgUrl2}  imgUrl3={place.imgUrl3} price={place.price} PostedAt={place.PostedAt}
                     key={place._id} />)}
 
                 </div>

@@ -95,8 +95,16 @@ class AdminProvider extends Component{
     }
     
     // deletePlace = () => {
-    //     dataAxios.delete("/api/places/:_id").then(res => {
-    //         event.target.p
+    //     dataAxios.delete(`/api/places/:${_id}`)
+    //     .then(res => {
+    //         this.setState(prevState => {
+    //             return {
+    //                 places:prevState.places.filter(place => place._id !==place._id )
+    //             }
+    //         })
+    //     })
+    //     .catch(err => {
+    //         console.log(err)
     //     })
     // }
 
@@ -109,6 +117,8 @@ class AdminProvider extends Component{
                 addPlace: this.addPlace,
                 getAdminPlace: this.getAdminPlace,
                 logout: this.logout,  
+                admin: this.state.admin,
+                token: this.state.token
             }} >
                 {this.props.children}
             </AdminContext.Provider>
