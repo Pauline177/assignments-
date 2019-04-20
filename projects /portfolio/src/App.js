@@ -2,7 +2,6 @@ import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 import Navbar from './components/Navbar.js'
 import './styling/app.css'
-import Me from './components/Me.js'
 import About from './components/About.js'
 import Contact from './components/Contact.js'
 import Resume from './components/Resume.js'
@@ -24,8 +23,7 @@ const App = () => {
                 </div>
                 <Navbar />
                 <Switch>
-                    <Route exact path="/" component={Me} />
-                    <Route path="/About" component={About} />
+                    <Route exact path="/" component={About} />
                     <Route path="/Contact" component={Contact} />
                     <Route path="/Resume" component={Resume} />
                     <Route path="/Zen" component={Zen} />

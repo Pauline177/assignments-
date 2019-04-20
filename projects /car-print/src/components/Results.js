@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom'
 import { withCar } from '../context/CarProvider.js'
 
 
-const Results = (props) => {
+const Results = props => {
     const { year, carMake, miles } = props
     const calculation = miles * 444   
-
+console.log(miles)
     return (
         <div className="results-body">
             <Link to="/Models"> <h4>Back</h4></Link>

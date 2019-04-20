@@ -1,10 +1,17 @@
 import React from 'react'
+import carPrint from './carRecording.mov'
 
 const Car = () => {
-
-    return(
+    return (
         <div className="window">
-                car print project 
+
+            <video autoPlay="true" loop  >
+                <source src={carPrint} type="video/mp4" />
+            </video>
+
+        <p>
+            about carprint 
+        </p>
         </div>
     )
 }

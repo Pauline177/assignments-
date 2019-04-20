@@ -1,11 +1,13 @@
 import React from 'react'
-
+import todo from './todoRecording.mov'
 const Todo = () => {
 
     return(
         <div className="window">
-            not sure but this should be the todo list project
-            eill change it if not 
+
+        <video autoPlay="true" loop  >
+                <source src={todo} type="video/mp4" />
+            </video>
         </div>
     )
 }

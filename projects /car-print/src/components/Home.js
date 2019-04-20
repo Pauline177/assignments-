@@ -22,13 +22,13 @@ const Home = (props) => {
                 why did i choose this project.
                 An average regular passenger car emits about 4.6 metric tons(10k pounds) of CO2 per year.
             according to <a href="https://www.ucsusa.org/clean-vehicles/car-emissions-and-global-warming">UC USA</a>
-                    cars and trucks emitted consist of 1/5th of the gas emiison in the United States.
+                    cars and trucks emitted consist of 1/5th of the gas emmision in the United States.
                 </p>
                 <p>
-                    I highly believe that people are able to make a difference when they feel like they can,
-                alot of people don't try because they feel like the proboem is already bigger than something they can handleChange
+                    I highly believe that people are able to make a difference when they feel like they can.
+                Alot of people don't try because they feel like the proboem is already bigger than something they can change,
                 with car print each individual will have a chance to see how much their cars emits and get suggestions of what they can do
-                that can make a difference because it is easy to dumo it on the bigger companies and say that they are the ones that plays the
+                that can make a difference because it is easy to blame it on the bigger companies and say that they are the ones that plays the
                 bigger role (which is true) but we as drivers can make a difference too.
                 </p>
                 <p>
@@ -50,11 +50,12 @@ const Home = (props) => {
             <div >
                 <form onSubmit={handleSubmit} className="form" >
                     Year:  <input type="number" name="year" value={year} onChange={handleChange} placeholder="XXXX" limit="4" required />
-                    <h4>{year}</h4>
+                    {/* <h4>{year}</h4> */}
                     miles driven:  <input type="number" name="miles" value={miles} onChange={handleChange} placeholder="000" required />
-                    <h4>{miles}</h4>
+                    {/* <h4>{miles}</h4> */}
                     <Link className="save-link" to='/Makes' > SAVE  ->>> </Link>
                 </form>
+                
             </div>
 
 

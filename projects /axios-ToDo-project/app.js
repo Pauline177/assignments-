@@ -31,7 +31,7 @@ function listTodos(tasks) {
         title.textContent = tasks[i].title
         imageUrl.setAttribute("src", tasks[i].imgUrl)
         describe.textContent = tasks[i].description
-        price.textContent = tasks[i].price
+        price.textContent = tasks[i].price + "$" 
         status.textContent = tasks[i].completed
         imageUrl.classList.add('pictureBox')
         smallContainer.classList.add('smallContainer')
