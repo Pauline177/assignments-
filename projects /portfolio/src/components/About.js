@@ -11,11 +11,11 @@ const Contact = () => {
 
             <p>
                 I love swimming, summer is my favorite season and I watch alot of movies.
-                i have developed such a passion for coding to the level i would have never imagined.
+                I have developed such a passion for coding to the level I would have never imagined.
             </p>
-            <div>
-                {/* <h1>Web developer</h1> */}
-            </div>
+            <p>
+                
+            </p>
 
         </div>
     )

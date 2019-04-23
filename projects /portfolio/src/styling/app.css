@@ -6,7 +6,7 @@
 }
 
 .app{
-    background-image: url("https://images.unsplash.com/photo-1489549132488-d00b7eee80f1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60");
+    background-image: url("https://images.unsplash.com/photo-1458682625221-3a45f8a844c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60");
     background-size: cover;
     background-repeat: no-repeat;
     width: 100vw;
@@ -35,7 +35,7 @@
     margin: 10px;
 }
 .icon:hover{
-    background-color: white;
+    background-color:black;
     border-radius: 25px;
     
 }
@@ -65,7 +65,9 @@
     align-content: center;
 }
 .window p{
-    color: rgba(255, 255, 255, 0.801);
+    color:rgb(104, 104, 42);
+    background-color: white;
+    border-radius: 10px;
     font-size: 25px;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
